@@ -6,6 +6,9 @@ flowchart TB
     cc-->asr
     bb-->asr
 
+    aliyun---asr
+    funasr---asr
+
     subgraph one
     aa("remote Android")
     cc("REMOTE PC")
@@ -13,7 +16,7 @@ flowchart TB
     end
 
     subgraph two
-    asr("ASR")
+    asr{{"ASR"}}
     end
 
     subgraph three
