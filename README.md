@@ -90,7 +90,7 @@ flowchart TB
 
 
 
-## **四、安装说明**
+## **安装说明**
 
 
 ### **环境** 
@@ -132,7 +132,7 @@ python main.py
 
 
 
-## **五、使用说明**
+## **使用说明**
 
 
 ### **使用说明**
@@ -173,10 +173,14 @@ python main.py
 
 可以接入远程音频输入，远程音频输出
 
+## **商务联系**
 
-商务联系QQ 467665317，我们提供：开发顾问、数字人模型定制及高校教学资源实施服务
-http://yafrm.com/forum.php?mod=viewthread&tid=302
+商务QQ： 467665317
+
+我们提供：**开发顾问**、**数字人模型定制**、**高校教学资源实施服务**
+
+论坛入口：http://yafrm.com/forum.php?mod=viewthread&tid=302
 
 关注公众号(fay数字人)获取最新微信技术交流群二维码（**请先star本仓库**）
 
-![mages/gzh.jpg](https://github.com/TheRamU/Fay/blob/main/images/gzh.jpg)https://github.com/TheRamU/Fay/blob/main/images/gzh.jpg)
+![mages/gzh.jpg](https://github.com/TheRamU/Fay/blob/main/images/gzh.jpg)
