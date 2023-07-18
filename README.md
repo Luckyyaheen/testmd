@@ -9,7 +9,6 @@ flowchart TB
     aliyun-.-asr
     funasr-.-asr
 
-    asr-->nlp
 
     subgraph one
     aa("remote Android")
@@ -35,38 +34,17 @@ flowchart TB
     end
 
 
-
-    one --> two
-    three --> two
-
-
-```
-
-```mermaid
-flowchart LR
-  subgraph TOP
-    direction TB
-    subgraph B1
-        direction RL
-        i1 -->f1
+    subgraph six
+    sixa("remote Android")
+    sixb("live2d")
+    sixc("UE")
+    sixd("xun")
+    sixe("remotePC")
     end
-    subgraph B2
-        direction BT
-        i2 -->f2
-    end
-  end
-  A --> TOP --> B
-  B1 --> B2
-```
 
 
-```mermaid
-flowchart TD
-    A[remote Android] -->  D{ASR}
-    B[LOCAL PC] -->   D{ASR}
-    C[REMOTE PC] -->   D{ASR}
-    E--- D{ASR}
-    F--- D{ASR}
-    D -->|Three| G[fa:fa-car NLP]
+    two --> four
+
+    four --> five
 
 ```
