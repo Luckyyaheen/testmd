@@ -6,8 +6,8 @@ flowchart TB
     cc-->asr
     bb-->asr
 
-    aliyun---asr
-    funasr---asr
+    aliyun-.-asr
+    funasr-.-asr
 
     subgraph one
     aa("remote Android")
@@ -21,9 +21,15 @@ flowchart TB
 
     subgraph three
     aliyun("aliyunapi")
-    funasr("funasr")
-  
+    funasr("funasr")  
     end
+
+    subgraph NLP
+    nlp{{"NLP"}}
+    end
+
+
+
 
     one --> two
     three --> two
