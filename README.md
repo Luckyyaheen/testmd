@@ -47,6 +47,15 @@ flowchart TB
     sixe("remotePC")
     end
 
+
+    subgraph seven
+    1sixa("remote Android")
+    1sixb("live2d")
+    1sixc("UE")
+    1sixd("xun")
+    1sixe("remotePC")
+    end
+
     two --> four
     four --> five
 
