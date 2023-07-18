@@ -1,32 +1,19 @@
 
-# Fay
 ```mermaid
-flowchart TD
-    A[remote Android] -->  D{ASR}
-    B[LOCAL PC] -->   D{ASR}
-    C[REMOTE PC] -->   D{ASR}
-    E--- D{ASR}
-    F--- D{ASR}
-    D -->|Three| G[fa:fa-car NLP]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+flowchart TB
+    c1-->a2
+    subgraph one
+    a1-->a2
+    end
+    subgraph two
+    b1-->b2
+    end
+    subgraph three
+    c1-->c2
+    end
+    one --> two
+    three --> two
+    two --> c2
 
 ```
 
@@ -48,33 +35,13 @@ flowchart LR
 ```
 
 
-
-
-
-# testmd
-
 ```mermaid
+flowchart TD
+    A[remote Android] -->  D{ASR}
+    B[LOCAL PC] -->   D{ASR}
+    C[REMOTE PC] -->   D{ASR}
+    E--- D{ASR}
+    F--- D{ASR}
+    D -->|Three| G[fa:fa-car NLP]
 
-classDiagram
-    Animal <|-- Duck
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
-        +String beakColor
-        +swim()
-        +quack()
-    }
-    class Fish{
-        -int sizeInFeet
-        -canEat()
-    }
-    class Zebra{
-        +bool is_wild
-        +run()
-    }
 ```
-
