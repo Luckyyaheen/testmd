@@ -2,15 +2,24 @@
 ```mermaid
 flowchart TB
     c1-->a2
+    aa-->asr
+    cc-->asr
+    bb-->asr
+
     subgraph one
-    a1-->a2
+    aa("remote Android")
+    cc("REMOTE PC")
+    bb("LOCAL PC")
     end
+
     subgraph two
-    b1-->b2
+    asr("ASR")
     end
+
     subgraph three
     c1-->c2
     end
+
     one --> two
     three --> two
     two --> c2
