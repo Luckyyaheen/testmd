@@ -1,5 +1,6 @@
 
 ```mermaid
+
 flowchart TB
 
     aa-->asr
@@ -14,6 +15,8 @@ flowchart TB
     tts-->sixc
     tts-->sixd
     tts-->sixe
+
+ 
 
     subgraph one
     aa("remote Android")
@@ -31,13 +34,24 @@ flowchart TB
     end
 
     subgraph four
-    nlp{{"NLP"}}
+    nlp{"NLP"}
+     subgraph four1
+
+     eighta("yuan1.0")
+     eightb("lingju")
+     eightc("rasa")
+    
+     end
+      subgraph four2
+      eightd("glm")
+      eighte("GPT")
+      eightf("RWKV")
+      end
     end
 
     subgraph five
     tts{{"TTS"}}
     end
-
 
     subgraph six
     sixa("remote Android")
@@ -47,17 +61,16 @@ flowchart TB
     sixe("remotePC")
     end
 
-
     subgraph seven
     seven_az("azure")
     seven_edg("Edge-TTS")
     seven_vi("vits")
- 
     end
 
     two --> four
     four --> five
     seven --> five
-
+    four1-.- nlp
+    four2-.- nlp
 
 ```
