@@ -9,6 +9,8 @@ flowchart TB
     aliyun-.-asr
     funasr-.-asr
 
+    asr-->nlp
+
     subgraph one
     aa("remote Android")
     cc("REMOTE PC")
@@ -24,7 +26,7 @@ flowchart TB
     funasr("funasr")  
     end
 
-    subgraph NLP
+    subgraph four
     nlp{{"NLP"}}
     end
 
