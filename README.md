@@ -49,11 +49,10 @@ flowchart TB
 
 
     subgraph seven
-    1sixa("remote Android")
-    1sixb("live2d")
-    1sixc("UE")
-    1sixd("xun")
-    1sixe("remotePC")
+    seven_az("azure")
+    seven_edg("Edge-TTS")
+    seven_vi("vits")
+ 
     end
 
     two --> four
