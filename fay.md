@@ -24,7 +24,6 @@ Fay数字人助理版是fay开源项目的重要分支，专注于构建智能�
 ## **二、Fay控制器核心逻辑**
 
 ```mermaid
-
 flowchart TB
 
     subgraph 音频来源
@@ -39,6 +38,9 @@ flowchart TB
     	subgraph   
             aliyun("aliyun api")
             funasr("funasr")  
+		    click funasr href "https://www.bilibili.com/video/BV1qs4y1g74e" "Open this in a new tab" _blank
+
+          
         end
     end
 
@@ -49,13 +51,20 @@ flowchart TB
 
      eighta("yuan1.0")
      eightb("lingju")
+	 click eightb href "https://www.bilibili.com/video/BV1NW4y1D76a/" "Open this in a new tab" _blank
+
      eightc("GPT/ChatGPT")
-    
+	 click eightc href "https://www.bilibili.com/video/BV1Dg4y1V7pn" "Open this in a new tab" _blank
+        
      end
     subgraph 离线
       eightd("Rasa + ChatGLM-6B")
+	  click eightd href "https://www.bilibili.com/video/BV1D14y1f7pr" "Open this in a new tab" _blank
       eighte("VisualGLM")
+	  click eighte href "https://www.bilibili.com/video/BV1mP411Q7mj" "Open this in a new tab" _blank
       eightf("RWKV")
+	  click eightf href "https://www.bilibili.com/video/BV1yu41157zB" "Open this in a new tab" _blank
+
       end
     end
 
@@ -70,11 +79,92 @@ flowchart TB
     subgraph 渲染
     	subgraph  
             sixa("Remote Android")
+		    click sixa href "https://www.bilibili.com/video/BV1FF411X7sW/?spm_id_from=333.788&vd_source=1364af6ac23a05600acd8f8415936944" "Open this in a new tab" _blank
             sixb("Live2d")
+		    click sixb href "https://www.bilibili.com/video/BV1sx4y1d775/?vd_source=564eede213b9ddfa9a10f12e5350fd64" "Open this in a new tab" _blank
             sixc("UE")
+		    click sixc href "https://www.bilibili.com/read/cv25133736" "Open this in a new tab" _blank
             sixd("Xuniren")
+		    click sixd href "https://www.bilibili.com/read/cv24997550" "Open this in a new tab" _blank
             sixe("Remote PC")
-		click sixe href "[https://www.github.com](https://www.bilibili.com/video/BV1FF411X7sW/?spm_id_from=333.788&vd_source=1364af6ac23a05600acd8f8415936944)" "Open this in a new tab" _blank
+		    click sixe href "https://www.bilibili.com/video/BV1FF411X7sW/?spm_id_from=333.788&vd_source=1364af6ac23a05600acd8f8415936944" "Open this in a new tab" _blank
+         end
+    end
+
+    音频来源 --> 语音识别
+    语音识别 --> 自然语言处理
+    自然语言处理 --> 语音合成
+    语音合成 --> 渲染
+
+```
+
+
+
+```mermaid
+flowchart TB
+
+    subgraph 音频来源
+        subgraph  
+            aa("Remote Android")
+            cc("Remote PC")
+            bb("Local PC")
+        end
+    end
+
+    subgraph 语音识别
+    	subgraph   
+            aliyun("aliyun api")
+            funasr("funasr")  
+		    click funasr href "https://www.bilibili.com/video/BV1qs4y1g74e" "Open this in a new tab" _blank
+
+          
+        end
+    end
+
+    
+
+    subgraph 自然语言处理
+     subgraph 接口
+
+     eighta("yuan1.0")
+     eightb("lingju")
+	 click eightb href "https://www.bilibili.com/video/BV1NW4y1D76a/" "Open this in a new tab" _blank
+
+     eightc("GPT/ChatGPT")
+	 click eightc href "https://www.bilibili.com/video/BV1Dg4y1V7pn" "Open this in a new tab" _blank
+        
+     end
+    subgraph 离线
+      eightd("Rasa + ChatGLM-6B")
+	  click eightd href "https://www.bilibili.com/video/BV1D14y1f7pr" "Open this in a new tab" _blank
+      eighte("VisualGLM")
+	  click eighte href "https://www.bilibili.com/video/BV1mP411Q7mj" "Open this in a new tab" _blank
+      eightf("RWKV")
+	  click eightf href "https://www.bilibili.com/video/BV1yu41157zB" "Open this in a new tab" _blank
+
+      end
+    end
+
+    subgraph 语音合成
+    	subgraph  
+            seven_az("azure")
+            seven_edg("Edge-TTS")
+            seven_vi("vits")
+         end
+    end
+
+    subgraph 渲染
+    	subgraph  
+            sixa("Remote Android")
+		    click sixa href "https://www.bilibili.com/video/BV1FF411X7sW/?spm_id_from=333.788&vd_source=1364af6ac23a05600acd8f8415936944" "Open this in a new tab" _blank
+            sixb("Live2d")
+		    click sixb href "https://www.bilibili.com/video/BV1sx4y1d775/?vd_source=564eede213b9ddfa9a10f12e5350fd64" "Open this in a new tab" _blank
+            sixc("UE")
+		    click sixc href "https://www.bilibili.com/read/cv25133736" "Open this in a new tab" _blank
+            sixd("Xuniren")
+		    click sixd href "https://www.bilibili.com/read/cv24997550" "Open this in a new tab" _blank
+            sixe("Remote PC")
+		    click sixe href "https://www.bilibili.com/video/BV1FF411X7sW/?spm_id_from=333.788&vd_source=1364af6ac23a05600acd8f8415936944" "Open this in a new tab" _blank
          end
     end
 
@@ -84,9 +174,12 @@ flowchart TB
     语音识别 --> 自然语言处理
     自然语言处理 --> 语音合成
     语音合成 --> 渲染
-
-
 ```
+
+
+
+
+
 
 
 ### **代码结构**
@@ -245,7 +338,7 @@ python main.py
 
 
 
-商务联系QQ 467665317，我们提供：开发顾问、数字人模型定制及高校教学资源实施服务
+**商务联系QQ 467665317，我们提供：开发顾问、数字人模型定制及高校教学资源实施服务
 http://yafrm.com/forum.php?mod=viewthread&tid=302
 
 关注公众号(fay数字人)获取最新微信技术交流群二维码（**请先star本仓库**）
