@@ -19,8 +19,6 @@ Fay数字人助理版是fay开源项目的重要分支，专注于构建智能�
 助理版Fay控制器使用：语音沟通，语音和文字回复；文字沟通，文字回复。
 
 
-
-
 ## **二、Fay控制器核心逻辑**
 
 ```mermaid
@@ -39,12 +37,10 @@ flowchart TB
             aliyun("aliyun api")
             funasr("funasr")  
 		    click funasr href "https://www.bilibili.com/video/BV1qs4y1g74e" "Open this in a new tab" _blank
-
           
         end
     end
-
-    
+ 
 
     subgraph 自然语言处理
      subgraph 接口
@@ -72,7 +68,7 @@ flowchart TB
     	subgraph  
             seven_az("azure")
             seven_edg("Edge-TTS")
-            seven_vi("vits")
+            seven_vi("离线合成")
          end
     end
 
@@ -93,15 +89,11 @@ flowchart TB
 
 
     
-	音频来源 --> 语音识别
+    音频来源 --> 语音识别
     语音识别 --> 自然语言处理
     自然语言处理 --> 语音合成
     语音合成 --> 渲染
 ```
-
-
-
-
 
 
 
