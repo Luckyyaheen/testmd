@@ -90,12 +90,12 @@ flowchart TB
 ```
 .
 
-├── main.py					# Program main entry
-├── fay_booter.py			# Core boot module
-├── config.json				# Controller configuration file
-├── system.conf				# System configuration file
+├── main.py	            # Program main entry
+├── fay_booter.py	    # Core boot module
+├── config.json		    # Controller configuration file
+├── system.conf		    # System configuration file
 ├── ai_module
-│   ├── ali_nls.py			# Aliyun Real-time Voice
+│   ├── ali_nls.py	    # Aliyun Real-time Voice
 │   ├── ms_tts_sdk.py       # Microsoft Text-to-Speech
 │   ├── nlp_lingju.py       # Lingju Human-Machine Interaction - Natural Language Processing
 │   ├── xf_aiui.py          # Xunfei Human-Machine Interaction - Natural Language Processing
