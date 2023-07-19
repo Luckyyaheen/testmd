@@ -10,7 +10,7 @@ Fay Digital Human Assistant Edition is an important branch of the Fay open-sourc
 
 
 
-## **Fay Digital Assistant Edition **
+## Fay Digital Assistant Edition
 
 ProTip:The shopping edition has been moved to a separate branch.[`fay-sales-edition`](https://github.com/TheRamU/Fay/tree/fay-sales-edition)
 
