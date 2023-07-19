@@ -233,7 +233,12 @@ Application Key needs to be filled in before starting
 
 
 
-For business inquiries, please contact:QQ 467665317，We provide development consulting, custom digital human models, and implementation services for educational resources in universities.
+### **For business inquiries**
+
+**Contact QQ **: 467665317
+
+We provide development consulting, custom digital human models, and implementation services for educational resources in universities.
+
 http://yafrm.com/forum.php?mod=viewthread&tid=302
 
 Follow our WeChat official account(fay数字人)Get the latest QR code for the WeChat technical discussion group (**Please star this repository first**)
