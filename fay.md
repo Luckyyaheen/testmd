@@ -74,10 +74,11 @@ flowchart TB
             sixc("UE")
             sixd("Xuniren")
             sixe("Remote PC")
+		click sixe href "[https://www.github.com](https://www.bilibili.com/video/BV1FF411X7sW/?spm_id_from=333.788&vd_source=1364af6ac23a05600acd8f8415936944)" "Open this in a new tab" _blank
          end
     end
 
-   
+
     
 	音频来源 --> 语音识别
     语音识别 --> 自然语言处理
