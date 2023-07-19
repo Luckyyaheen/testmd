@@ -27,7 +27,7 @@ Fay Controller Usage in Assistant Edition: Voice communication, voice and text r
 
 flowchart TB
 
-    subgraph 音频来源
+    subgraph Audio source
         subgraph  
             aa("Remote Android")
             cc("Remote PC")
@@ -35,7 +35,7 @@ flowchart TB
         end
     end
 
-    subgraph 语音识别
+    subgraph speech recognition
     	subgraph   
             aliyun("aliyun api")
             funasr("funasr")  
@@ -44,22 +44,22 @@ flowchart TB
 
     
 
-    subgraph 自然语言处理
-     subgraph 接口
+    subgraph natural language processing
+     subgraph interface
 
      eighta("yuan1.0")
      eightb("lingju")
      eightc("GPT/ChatGPT")
     
      end
-    subgraph 离线
+    subgraph offline
       eightd("Rasa + ChatGLM-6B")
       eighte("VisualGLM")
       eightf("RWKV")
       end
     end
 
-    subgraph 语音合成
+    subgraph speech synthesis
     	subgraph  
             seven_az("azure")
             seven_edg("Edge-TTS")
@@ -67,7 +67,7 @@ flowchart TB
          end
     end
 
-    subgraph 渲染
+    subgraph rendering
     	subgraph  
             sixa("Remote Android")
             sixb("Live2d")
@@ -79,10 +79,10 @@ flowchart TB
 
    
     
-	音频来源 --> 语音识别
-    语音识别 --> 自然语言处理
-    自然语言处理 --> 语音合成
-    语音合成 --> 渲染
+	Audio source --> speech recognition
+    speech recognition --> natural language processing
+    natural language processing --> speech synthesis
+    speech synthesis --> rendering
 
 
 ```
