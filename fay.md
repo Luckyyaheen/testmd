@@ -101,12 +101,12 @@ flowchart TB
 
 ```
 .
-├── main.py					# 程序主入口
-├── fay_booter.py			# 核心启动模块
-├── config.json				# 控制器配置文件
-├── system.conf				# 系统配置文件
+├── main.py		    # 程序主入口
+├── fay_booter.py	    # 核心启动模块
+├── config.json		    # 控制器配置文件
+├── system.conf		    # 系统配置文件
 ├── ai_module
-│   ├── ali_nls.py			# 阿里云 实时语音
+│   ├── ali_nls.py	    # 阿里云 实时语音
 │   ├── ms_tts_sdk.py       # 微软 文本转语音
 │   ├── nlp_lingju.py       # 灵聚 人机交互-自然语言处理
 │   ├── xf_aiui.py          # 讯飞 人机交互-自然语言处理
