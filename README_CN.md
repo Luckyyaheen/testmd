@@ -1,688 +1,266 @@
-<svg aria-roledescription="flowchart-v2" role="graphics-document document" viewBox="-7.5 -8 722.40625 1122"
-        style="max-width: 722.406px; background-color: white;" xmlns:xlink="http://www.w3.org/1999/xlink"
-        xmlns="http://www.w3.org/2000/svg" width="100%" id="my-svg">
-        <style>
-            #my-svg {
-                font-family: "trebuchet ms", verdana, arial, sans-serif;
-                font-size: 16px;
-                fill: #333;
-            }
+<div align="center">
+    <br>
+    <img src="images/icon.png" alt="Fay">
+    <h1>FAY</h1>
+	<h3>Fay数字人助理</h3>
+</div>
 
-            #my-svg .error-icon {
-                fill: #552222;
-            }
 
-            #my-svg .error-text {
-                fill: #552222;
-                stroke: #552222;
-            }
+Fay数字人助理版是fay开源项目的重要分支，专注于构建智能数字助理的开源解决方案。它提供了灵活的模块化设计，使开发人员能够定制和组合各种功能模块，包括情绪分析、NLP处理、语音合成和语音输出等。Fay数字人助理版为开发人员提供了强大的工具和资源，用于构建智能、个性化和多功能的数字助理应用。通过该版本，开发人员可以轻松创建适用于各种场景和领域的数字人助理，为用户提供智能化的语音交互和个性化服务。
 
-            #my-svg .edge-thickness-normal {
-                stroke-width: 2px;
-            }
 
-            #my-svg .edge-thickness-thick {
-                stroke-width: 3.5px;
-            }
 
-            #my-svg .edge-pattern-solid {
-                stroke-dasharray: 0;
-            }
+## **Fay数字人助理版**
 
-            #my-svg .edge-pattern-dashed {
-                stroke-dasharray: 3;
-            }
+注：带货版移到分支[`fay-sales-edition`](https://github.com/TheRamU/Fay/tree/fay-sales-edition)
 
-            #my-svg .edge-pattern-dotted {
-                stroke-dasharray: 2;
-            }
+![](images/controller.png)
 
-            #my-svg .marker {
-                fill: #333333;
-                stroke: #333333;
-            }
+助理版Fay控制器使用：语音沟通，语音和文字回复；文字沟通，文字回复。
 
-            #my-svg .marker.cross {
-                stroke: #333333;
-            }
 
-            #my-svg svg {
-                font-family: "trebuchet ms", verdana, arial, sans-serif;
-                font-size: 16px;
-            }
+## **二、Fay控制器核心逻辑**
 
-            #my-svg .label {
-                font-family: "trebuchet ms", verdana, arial, sans-serif;
-                color: #333;
-            }
+```mermaid
+flowchart TB
 
-            #my-svg .cluster-label text {
-                fill: #333;
-            }
+    subgraph 音频来源
+        subgraph  
+            aa("Remote Android")
+            cc("Remote PC")
+            bb("Local PC")
+        end
+    end
 
-            #my-svg .cluster-label span,
-            #my-svg p {
-                color: #333;
-            }
+    subgraph 语音识别
+    	subgraph   
+            aliyun("aliyun api")
+            funasr("funasr")  
+		    click funasr href "https://www.bilibili.com/video/BV1qs4y1g74e" "Open this in a new tab" _blank
+          
+        end
+    end
+ 
 
-            #my-svg .label text,
-            #my-svg span,
-            #my-svg p {
-                fill: #333;
-                color: #333;
-            }
+    subgraph 自然语言处理
+     subgraph 接口
 
-            #my-svg .node rect,
-            #my-svg .node circle,
-            #my-svg .node ellipse,
-            #my-svg .node polygon,
-            #my-svg .node path {
-                fill: #ECECFF;
-                stroke: #9370DB;
-                stroke-width: 1px;
-            }
+     eighta("yuan1.0")
+     eightb("lingju")
+	 click eightb href "https://www.bilibili.com/video/BV1NW4y1D76a/" "Open this in a new tab" _blank
 
-            #my-svg .flowchart-label text {
-                text-anchor: middle;
-            }
+     eightc("GPT/ChatGPT")
+	 click eightc href "https://www.bilibili.com/video/BV1Dg4y1V7pn" "Open this in a new tab" _blank
+        
+     end
+    subgraph 离线
+      eightd("Rasa + ChatGLM-6B")
+	  click eightd href "https://www.bilibili.com/video/BV1D14y1f7pr" "Open this in a new tab" _blank
+      eighte("VisualGLM")
+	  click eighte href "https://www.bilibili.com/video/BV1mP411Q7mj" "Open this in a new tab" _blank
+      eightf("RWKV")
+	  click eightf href "https://www.bilibili.com/video/BV1yu41157zB" "Open this in a new tab" _blank
 
-            #my-svg .node .label {
-                text-align: center;
-            }
+      end
+    end
 
-            #my-svg .node.clickable {
-                cursor: pointer;
-            }
+    subgraph 语音合成
+    	subgraph  
+            seven_az("azure")
+            seven_edg("Edge-TTS")
+            seven_vi("离线合成")
+         end
+    end
 
-            #my-svg .arrowheadPath {
-                fill: #333333;
-            }
+    subgraph 渲染
+    	subgraph  
+            sixa("Remote Android")
+		    click sixa href "https://www.bilibili.com/video/BV1FF411X7sW/?spm_id_from=333.788&vd_source=1364af6ac23a05600acd8f8415936944" "Open this in a new tab" _blank
+            sixb("Live2d")
+		    click sixb href "https://www.bilibili.com/video/BV1sx4y1d775/?vd_source=564eede213b9ddfa9a10f12e5350fd64" "Open this in a new tab" _blank
+            sixc("UE")
+		    click sixc href "https://www.bilibili.com/read/cv25133736" "Open this in a new tab" _blank
+            sixd("Xuniren")
+		    click sixd href "https://www.bilibili.com/read/cv24997550" "Open this in a new tab" _blank
+            sixe("Remote PC")
+		    click sixe "https://www.bilibili.com/video/BV1FF411X7sW/?spm_id_from=333.788&vd_source=1364af6ac23a05600acd8f8415936944" _blank
+         end
+    end
 
-            #my-svg .edgePath .path {
-                stroke: #333333;
-                stroke-width: 2.0px;
-            }
 
-            #my-svg .flowchart-link {
-                stroke: #333333;
-                fill: none;
-            }
+    
+    音频来源 --> 语音识别
+    语音识别 --> 自然语言处理
+    自然语言处理 --> 语音合成
+    语音合成 --> 渲染
+```
 
-            #my-svg .edgeLabel {
-                background-color: #e8e8e8;
-                text-align: center;
-            }
 
-            #my-svg .edgeLabel rect {
-                opacity: 0.5;
-                background-color: #e8e8e8;
-                fill: #e8e8e8;
-            }
 
-            #my-svg .labelBkg {
-                background-color: rgba(232, 232, 232, 0.5);
-            }
+### **代码结构**
 
-            #my-svg .cluster rect {
-                fill: #ffffde;
-                stroke: #aaaa33;
-                stroke-width: 1px;
-            }
+```
+.
+├── main.py		    # 程序主入口
+├── fay_booter.py	    # 核心启动模块
+├── config.json		    # 控制器配置文件
+├── system.conf		    # 系统配置文件
+├── ai_module
+│   ├── ali_nls.py	    # 阿里云 实时语音
+│   ├── ms_tts_sdk.py       # 微软 文本转语音
+│   ├── nlp_lingju.py       # 灵聚 人机交互-自然语言处理
+│   ├── xf_aiui.py          # 讯飞 人机交互-自然语言处理
+│   ├── nlp_gpt.py          # gpt api对接
+│   ├── nlp_chatgpt.py      # chat.openai.com逆向对接
+│   ├── nlp_yuan.py         # 浪潮.源大模型对接
+│   ├── nlp_rasa.py         # ChatGLM-6B的基础上前置Rasa会话管理(强烈推荐)
+│   ├── nlp_VisualGLM.py    # 对接多模态大语言模型VisualGLM-6B
+│   ├── nlp_rwkv.py         # 离线对接rwkv
+│   ├── nlp_rwkv_api.py     # rwkv server api
+│   ├── yolov8.py           # yolov8资态识别
+│   └── xf_ltp.py           # 讯飞 情感分析
+├── bin                     # 可执行文件目录
+├── core                    # 数字人核心
+│   ├── fay_core.py         # 数字人核心模块
+│   ├── recorder.py         # 录音器
+│   ├── tts_voice.py        # 语音生源枚举
+│   ├── authorize_tb.py     # fay.db认证表管理
+│   ├── content_db.py       # fay.db内容表管理
+│   ├── interact.py         # 互动（消息）对象
+│   ├── song_player.py      # 音乐播放（暂不可用）
+│   └── wsa_server.py       # WebSocket 服务端
+├── gui                     # 图形界面
+│   ├── flask_server.py     # Flask 服务端
+│   ├── static
+│   ├── templates
+│   └── window.py           # 窗口模块
+├── scheduler
+│   └── thread_manager.py   # 调度管理器
+├── utils                   # 工具模块
+    ├── config_util.py      
+    ├── storer.py
+    └── util.py
+└── test                    # 都是惊喜
+```
 
-            #my-svg .cluster text {
-                fill: #333;
-            }
 
-            #my-svg .cluster span,
-            #my-svg p {
-                color: #333;
-            }
+## **三、升级日志**
+**2023.07.14：**
 
-            #my-svg div.mermaidTooltip {
-                position: absolute;
-                text-align: center;
-                max-width: 200px;
-                padding: 2px;
-                font-family: "trebuchet ms", verdana, arial, sans-serif;
-                font-size: 12px;
-                background: hsl(80, 100%, 96.2745098039%);
-                border: 1px solid #aaaa33;
-                border-radius: 2px;
-                pointer-events: none;
-                z-index: 100;
-            }
++ 修复linux及mac运行出错问题；
++ 修复因唇型出错无法继续执行问题；
++ 提供rwkv对接方案。
 
-            #my-svg .flowchartTitleText {
-                text-anchor: middle;
-                font-size: 18px;
-                fill: #333;
-            }
+**2023.07.12：**
 
-            #my-svg :root {
-                --mermaid-font-family: "trebuchet ms", verdana, arial, sans-serif;
-            }
-        </style>
-        <g>
-            <marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="10"
-                viewBox="0 0 10 10" class="marker flowchart" id="flowchart-pointEnd">
-                <path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath"
-                    d="M 0 0 L 10 5 L 0 10 z" />
-            </marker>
-            <marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="0"
-                viewBox="0 0 10 10" class="marker flowchart" id="flowchart-pointStart">
-                <path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath"
-                    d="M 0 5 L 10 10 L 10 0 z" />
-            </marker>
-            <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11"
-                viewBox="0 0 10 10" class="marker flowchart" id="flowchart-circleEnd">
-                <circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5" />
-            </marker>
-            <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1"
-                viewBox="0 0 10 10" class="marker flowchart" id="flowchart-circleStart">
-                <circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5" />
-            </marker>
-            <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12"
-                viewBox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossEnd">
-                <path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath"
-                    d="M 1,1 l 9,9 M 10,1 l -9,9" />
-            </marker>
-            <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1"
-                viewBox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossStart">
-                <path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath"
-                    d="M 1,1 l 9,9 M 10,1 l -9,9" />
-            </marker>
-            <g class="root">
-                <g class="clusters" />
-                <g class="edgePaths">
-                    <path marker-end="url(#flowchart-pointEnd)" style="fill:none;"
-                        class="edge-thickness-normal edge-pattern-solid flowchart-link LS-音频来源 LE-语音识别"
-                        id="L-音频来源-语音识别-0"
-                        d="M353.203125,154L353.203125,158.16666666666666C353.203125,162.33333333333334,353.203125,170.66666666666666,353.203125,179C353.203125,187.33333333333334,353.203125,195.66666666666666,353.203125,199.83333333333334L353.203125,204" />
-                    <path marker-end="url(#flowchart-pointEnd)" style="fill:none;"
-                        class="edge-thickness-normal edge-pattern-solid flowchart-link LS-语音识别 LE-自然语言处理"
-                        id="L-语音识别-自然语言处理-0"
-                        d="M353.203125,358L353.203125,362.1666666666667C353.203125,366.3333333333333,353.203125,374.6666666666667,353.203125,383C353.203125,391.3333333333333,353.203125,399.6666666666667,353.203125,403.8333333333333L353.203125,408" />
-                    <path marker-end="url(#flowchart-pointEnd)" style="fill:none;"
-                        class="edge-thickness-normal edge-pattern-solid flowchart-link LS-自然语言处理 LE-语音合成"
-                        id="L-自然语言处理-语音合成-0"
-                        d="M353.203125,696L353.203125,700.1666666666666C353.203125,704.3333333333334,353.203125,712.6666666666666,353.203125,721C353.203125,729.3333333333334,353.203125,737.6666666666666,353.203125,741.8333333333334L353.203125,746" />
-                    <path marker-end="url(#flowchart-pointEnd)" style="fill:none;"
-                        class="edge-thickness-normal edge-pattern-solid flowchart-link LS-语音合成 LE-渲染" id="L-语音合成-渲染-0"
-                        d="M353.203125,902L353.203125,906.1666666666666C353.203125,910.3333333333334,353.203125,918.6666666666666,353.203125,927C353.203125,935.3333333333334,353.203125,943.6666666666666,353.203125,947.8333333333334L353.203125,952" />
-                </g>
-                <g class="edgeLabels">
-                    <g class="edgeLabel">
-                        <g transform="translate(0, 0)" class="label">
-                            <foreignObject height="0" width="0">
-                                <div style="display: inline-block; white-space: nowrap;"
-                                    xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div>
-                            </foreignObject>
-                        </g>
-                    </g>
-                    <g class="edgeLabel">
-                        <g transform="translate(0, 0)" class="label">
-                            <foreignObject height="0" width="0">
-                                <div style="display: inline-block; white-space: nowrap;"
-                                    xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div>
-                            </foreignObject>
-                        </g>
-                    </g>
-                    <g class="edgeLabel">
-                        <g transform="translate(0, 0)" class="label">
-                            <foreignObject height="0" width="0">
-                                <div style="display: inline-block; white-space: nowrap;"
-                                    xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div>
-                            </foreignObject>
-                        </g>
-                    </g>
-                    <g class="edgeLabel">
-                        <g transform="translate(0, 0)" class="label">
-                            <foreignObject height="0" width="0">
-                                <div style="display: inline-block; white-space: nowrap;"
-                                    xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div>
-                            </foreignObject>
-                        </g>
-                    </g>
-                </g>
-                <g class="nodes">
-                    <g transform="translate(-7.5, 944)" class="root">
-                        <g class="clusters">
-                            <g id="渲染" class="cluster default flowchart-label">
-                                <rect height="154" width="706.40625" y="8" x="8" ry="0" rx="0" style="" />
-                                <g transform="translate(345.203125, 8)" class="cluster-label">
-                                    <foreignObject height="21" width="32">
-                                        <div style="display: inline-block; white-space: nowrap;"
-                                            xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">渲染</span></div>
-                                    </foreignObject>
-                                </g>
-                            </g>
-                        </g>
-                        <g class="edgePaths" />
-                        <g class="edgeLabels" />
-                        <g class="nodes">
-                            <g transform="translate(25.5, 35)" class="root">
-                                <g class="clusters">
-                                    <g id="subGraph9" class="cluster default flowchart-label">
-                                        <rect height="84" width="656.40625" y="8" x="8" ry="0" rx="0" style="" />
-                                        <g transform="translate(336.203125, 8)" class="cluster-label">
-                                            <foreignObject height="0" width="0">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"></span>
-                                                </div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g class="edgePaths" />
-                                <g class="edgeLabels" />
-                                <g class="nodes">
-                                    <g transform="translate(107.3203125, 50)" id="flowchart-sixa-68"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="128.640625" y="-17" x="-64.3203125" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-56.8203125, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="113.640625">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">Remote Android</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(252.40625, 50)" id="flowchart-sixb-69"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="61.53125" y="-17" x="-30.765625" ry="5" rx="5" style=""
-                                            class="basic label-container" />
-                                        <g transform="translate(-23.265625, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="46.53125">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><a href="https://www.bilibili.com/video/BV1sx4y1d775/?vd_source=564eede213b9ddfa9a10f12e5350fd64" target="_blank"><span class="nodeLabel">Live2d</span></a></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(350.1484375, 50)" id="flowchart-sixc-70"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="33.953125" y="-17" x="-16.9765625" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-9.4765625, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="18.953125">
-                                                <div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">
-                                                  <a href="https://www.bilibili.com/read/cv25133736" target="_blank"> <span class="nodeLabel"> UE</span></a></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(451.9453125, 50)" id="flowchart-sixd-71"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="69.640625" y="-17" x="-34.8203125" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-27.3203125, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="54.640625">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span
-                                                        class="nodeLabel"> <a href="https://www.bilibili.com/read/cv24997550" target="_blank">Xuniren</a></span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(583.0859375, 50)" id="flowchart-sixe-72"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="92.640625" y="-17" x="-46.3203125" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-38.8203125, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="77.640625">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">Remote PC</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                    <g transform="translate(128.1640625, 738)" class="root">
-                        <g class="clusters">
-                            <g id="语音合成" class="cluster default flowchart-label">
-                                <rect height="156" width="435.078125" y="8" x="8" ry="0" rx="0" style="" />
-                                <g transform="translate(193.5390625, 8)" class="cluster-label">
-                                    <foreignObject height="21" width="64">
-                                        <div style="display: inline-block; white-space: nowrap;"
-                                            xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">语音合成</span>
-                                        </div>
-                                    </foreignObject>
-                                </g>
-                            </g>
-                        </g>
-                        <g class="edgePaths" />
-                        <g class="edgeLabels" />
-                        <g class="nodes">
-                            <g transform="translate(25.5, 35)" class="root">
-                                <g class="clusters">
-                                    <g id="subGraph7" class="cluster default flowchart-label">
-                                        <rect height="86" width="385.078125" y="8" x="8" ry="0" rx="0" style="" />
-                                        <g transform="translate(200.5390625, 8)" class="cluster-label">
-                                            <foreignObject height="0" width="0">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"></span>
-                                                </div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g class="edgePaths" />
-                                <g class="edgeLabels" />
-                                <g class="nodes">
-                                    <g transform="translate(70.34375, 51)" id="flowchart-seven_az-65"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="54.6875" y="-17" x="-27.34375" ry="5" rx="5" style=""
-                                            class="basic label-container" />
-                                        <g transform="translate(-19.84375, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="39.6875">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span
-                                                        class="nodeLabel">azure</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(188.3828125, 51)" id="flowchart-seven_edg-66"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="81.390625" y="-17" x="-40.6953125" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-33.1953125, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="66.390625">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span
-                                                        class="nodeLabel">Edge-TTS</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(318.578125, 51)" id="flowchart-seven_vi-67"
-                                        class="node default default flowchart-label">
-                                        <rect height="36" width="79" y="-18" x="-39.5" ry="5" rx="5" style=""
-                                            class="basic label-container" />
-                                        <g transform="translate(-32, -10.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="21" width="64">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span
-                                                        class="nodeLabel">离线合成</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                    <g transform="translate(88.140625, 400)" class="root">
-                        <g class="clusters">
-                            <g id="自然语言处理" class="cluster default flowchart-label">
-                                <rect height="288" width="515.125" y="8" x="8" ry="0" rx="0" style="" />
-                                <g transform="translate(217.5625, 8)" class="cluster-label">
-                                    <foreignObject height="21" width="96">
-                                        <div style="display: inline-block; white-space: nowrap;"
-                                            xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">自然语言处理</span>
-                                        </div>
-                                    </foreignObject>
-                                </g>
-                            </g>
-                        </g>
-                        <g class="edgePaths" />
-                        <g class="edgeLabels" />
-                        <g class="nodes">
-                            <g transform="translate(52.25, 35)" class="root">
-                                <g class="clusters">
-                                    <g id="接口" class="cluster default flowchart-label">
-                                        <rect height="84" width="411.625" y="8" x="8" ry="0" rx="0" style="" />
-                                        <g transform="translate(197.8125, 8)" class="cluster-label">
-                                            <foreignObject height="21" width="32">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span
-                                                        class="nodeLabel">接口</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g class="edgePaths" />
-                                <g class="edgeLabels" />
-                                <g class="nodes">
-                                    <g transform="translate(78.71875, 50)" id="flowchart-eighta-59"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="71.4375" y="-17" x="-35.71875" ry="5" rx="5" style=""
-                                            class="basic label-container" />
-                                        <g transform="translate(-28.21875, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="56.4375">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span
-                                                        class="nodeLabel">yuan1.0</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(192.2734375, 50)" id="flowchart-eightb-60"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="55.671875" y="-17" x="-27.8359375" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-20.3359375, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="40.671875">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml">
-                                                    <a href="https://www.bilibili.com/video/BV1NW4y1D76a/" target="_blank"><span class="nodeLabel">lingju</span></a></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(327.3671875, 50)" id="flowchart-eightc-61"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="114.515625" y="-17" x="-57.2578125" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-49.7578125, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="99.515625">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml">
-                                                    <a href="https://www.bilibili.com/video/BV1Dg4y1V7pn" target="_blank"><span class="nodeLabel">GPT/ChatGPT</span></a></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                            <g transform="translate(25.5, 169)" class="root">
-                                <g class="clusters">
-                                    <g id="离线" class="cluster default flowchart-label">
-                                        <rect height="84" width="465.125" y="8" x="8" ry="0" rx="0" style="" />
-                                        <g transform="translate(224.5625, 8)" class="cluster-label">
-                                            <foreignObject height="21" width="32">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span
-                                                        class="nodeLabel">离线</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g class="edgePaths" />
-                                <g class="edgeLabels" />
-                                <g class="nodes">
-                                    <g transform="translate(119.1484375, 50)" id="flowchart-eightd-62"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="152.296875" y="-17" x="-76.1484375" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-68.6484375, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="137.296875">
-                                                <div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml">
-                                                <a href="https://www.bilibili.com/video/BV1D14y1f7pr" target="_blank"> <span class="nodeLabel">Rasa + ChatGLM-6B</span></a></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(288.9453125, 50)" id="flowchart-eighte-63"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="87.296875" y="-17" x="-43.6484375" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-36.1484375, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="72.296875">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml">
-                                                    <a href="https://www.bilibili.com/video/BV1mP411Q7mj" target="_blank"><span class="nodeLabel">VisualGLM</span></a></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(410.359375, 50)" id="flowchart-eightf-64"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="55.53125" y="-17" x="-27.765625" ry="5" rx="5" style=""
-                                            class="basic label-container" />
-                                        <g transform="translate(-20.265625, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="40.53125">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml">
-                                                   <a href="https://www.bilibili.com/video/BV1yu41157zB" target="_blank"> <span class="nodeLabel">RWKV</span></a></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                    <g transform="translate(188.5703125, 196)" class="root">
-                        <g class="clusters">
-                            <g id="语音识别" class="cluster default flowchart-label">
-                                <rect height="154" width="314.265625" y="8" x="8" ry="0" rx="0" style="" />
-                                <g transform="translate(133.1328125, 8)" class="cluster-label">
-                                    <foreignObject height="21" width="64">
-                                        <div style="display: inline-block; white-space: nowrap;"
-                                            xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">语音识别</span>
-                                        </div>
-                                    </foreignObject>
-                                </g>
-                            </g>
-                        </g>
-                        <g class="edgePaths" />
-                        <g class="edgeLabels" />
-                        <g class="nodes">
-                            <g transform="translate(25.5, 35)" class="root">
-                                <g class="clusters">
-                                    <g id="subGraph2" class="cluster default flowchart-label">
-                                        <rect height="84" width="264.265625" y="8" x="8" ry="0" rx="0" style="" />
-                                        <g transform="translate(140.1328125, 8)" class="cluster-label">
-                                            <foreignObject height="0" width="0">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"></span>
-                                                </div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g class="edgePaths" />
-                                <g class="edgeLabels" />
-                                <g class="nodes">
-                                    <g transform="translate(85.3828125, 50)" id="flowchart-aliyun-57"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="84.765625" y="-17" x="-42.3828125" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-34.8828125, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="69.765625">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">aliyun
-                                                        api</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(207.515625, 50)" id="flowchart-funasr-58"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="59.5" y="-17" x="-29.75" ry="5" rx="5" style=""
-                                            class="basic label-container" />
-                                        <g transform="translate(-22.25, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="44.5">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml">
-                                                    <a href="https://www.bilibili.com/video/BV1qs4y1g74e" target="_blank">  <span class="nodeLabel">funasr</span></a></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                    <g transform="translate(87.0390625, -8)" class="root">
-                        <g class="clusters">
-                            <g id="音频来源" class="cluster default flowchart-label">
-                                <rect height="154" width="517.328125" y="8" x="8" ry="0" rx="0" style="" />
-                                <g transform="translate(234.6640625, 8)" class="cluster-label">
-                                    <foreignObject height="21" width="64">
-                                        <div style="display: inline-block; white-space: nowrap;"
-                                            xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">音频来源</span>
-                                        </div>
-                                    </foreignObject>
-                                </g>
-                            </g>
-                        </g>
-                        <g class="edgePaths" />
-                        <g class="edgeLabels" />
-                        <g class="nodes">
-                            <g transform="translate(25.5, 35)" class="root">
-                                <g class="clusters">
-                                    <g id="subGraph0" class="cluster default flowchart-label">
-                                        <rect height="84" width="467.328125" y="8" x="8" ry="0" rx="0" style="" />
-                                        <g transform="translate(241.6640625, 8)" class="cluster-label">
-                                            <foreignObject height="0" width="0">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"></span>
-                                                </div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g class="edgePaths" />
-                                <g class="edgeLabels" />
-                                <g class="nodes">
-                                    <g transform="translate(107.3203125, 50)" id="flowchart-aa-54"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="128.640625" y="-17" x="-64.3203125" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-56.8203125, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="113.640625">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">Remote Android</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(267.9609375, 50)" id="flowchart-cc-55"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="92.640625" y="-17" x="-46.3203125" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-38.8203125, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="77.640625">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"> <span class="nodeLabel">Remote PC</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                    <g transform="translate(402.3046875, 50)" id="flowchart-bb-56"
-                                        class="node default default flowchart-label">
-                                        <rect height="34" width="76.046875" y="-17" x="-38.0234375" ry="5" rx="5"
-                                            style="" class="basic label-container" />
-                                        <g transform="translate(-30.5234375, -9.5)" style="" class="label">
-                                            <rect />
-                                            <foreignObject height="19" width="61.046875">
-                                                <div style="display: inline-block; white-space: nowrap;"
-                                                    xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">Local
-                                                        PC</span></div>
-                                            </foreignObject>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </svg>
++ 修复助理版文字输入不读取人设回复问题；
++ 修复助理版文字输入不读取qa回复问题；
++ 增强麦克风接入稳定性。
+
+**2023.07.05：**
+
++ 修复无法运行唇型算法而导致的不播放声音问题。
+
+**2023.06：**
+
++ 重构NLP模块管理逻辑，便于自由扩展；
++ gpt：拆分为ChatGPT及GPT、更换新的GPT接口、可单独配置代理服务器；
++ 指定yolov8包版本，解决yolo不兼容问题；
++ 修复：自言自语bug、接收多个待处理消息bug。
+
++ 集成灵聚NLP api(支持GPT3.5及多应用)；
++ ui修正。
+
++ 集成本地唇型算法。
+
++ 解决多声道麦克风兼容问题；
++ 重构fay_core.py及fay_booter.py代码；
++ ui适应布局调整；
++ 恢复声音选择；
++ ”思考中...“显示逻辑修复。
+
+**2023.05：**
+
++ 修复多个bug：消息框换行及空格问题、语音识别优化；
++ 彩蛋转正，Fay沟通与ChatGPT并行；
++ 加入yolov8姿态识别；
++ 加入VisualGLM-6B多模态单机离线大语言模型。
+
++ 打出Fay数字人助理版作为主分支（带货版移到分支[`fay-sales-edition`](https://github.com/TheRamU/Fay/tree/fay-sales-edition)）；
++ 添加Fay助理的文字沟通窗口（文字与语音同步）；
++ 添加沟通记录本地保存功能；
++ 升级ChatGLM-6B的应用逻辑，长文本与语音回复分离。
+
+
+## **四、安装说明**
+
+
+### **环境** 
+- Python 3.9、3.10
+- Windows、macos、linux
+
+### **安装依赖**
+
+```shell
+pip install -r requirements.txt
+```
+
+### **配置应用密钥**
++ 查看 [AI 模块](#ai-模块)
++ 浏览链接，注册并创建应用，将应用密钥填入 `./system.conf` 中
+
+### **启动**
+启动Fay控制器
+```shell
+python main.py
+```
+
+
+### **AI 模块**
+启动前需填入应用密钥
+
+| 代码模块                  | 描述                       | 链接                                                         |
+| ------------------------- | -------------------------- | ------------------------------------------------------------ |
+| ./ai_module/ali_nls.py    | 实时语音识别（非必须，免费3个月,asr二选一）    | https://ai.aliyun.com/nls/trans                              |
+| ./ai_module/funasr.py    | 达摩院开源免费本地asr （非必须，asr二选一）   | fay/test/funasr/README.MD                           |
+| ./ai_module/ms_tts_sdk.py | 微软 文本转情绪语音（非必须，不配置时使用免费的edge-tts） | https://azure.microsoft.com/zh-cn/services/cognitive-services/text-to-speech/ |
+| ./ai_module/xf_ltp.py     | 讯飞 情感分析              | https://www.xfyun.cn/service/emotion-analysis                |
+| ./utils/ngrok_util.py     | ngrok.cc 外网穿透（可选）  | http://ngrok.cc                                              |
+| ./ai_module/nlp_lingju.py | 灵聚NLP api(支持GPT3.5及多应用)（NLP多选1） | https://open.lingju.ai   需联系客服务开通gpt3.5权限|
+| ./ai_module/yuan_1_0.py    | 浪潮源大模型（NLP 多选1） | https://air.inspur.com/                                              |
+| ./ai_module/chatgpt.py     | ChatGPT（NLP多选1） | *******                                              |
+| ./ai_module/nlp_rasa.py    | ChatGLM-6B的基础上前置Rasa会话管理（NLP 多选1）  | https://m.bilibili.com/video/BV1D14y1f7pr |
+| ./ai_module/nlp_VisualGLM.py | 对接VisualGLM-6B多模态单机离线大语言模型（NLP 多选1） | B站视频 |
+
+
+
+## **五、使用说明**
+
+
+### **使用说明**
+
++ 语音助理：fay控制器（麦克风输入源开启、面板播放开启）；
++ 远程语音助理：fay控制器（面板播放关闭）+ 远程设备接入；
++ 数字人互动：fay控制器（麦克风输入源开启、面板播放关闭、填写性格Q&A）+ 数字人；
++ 贾维斯、Her：加入我们一起完成。
+
+
+### **语音指令**
+
+| 关闭核心                  | 静音                       | 取消静音                                                         |
+| ------------------------- | -------------------------- | ------------------------------------------------------------ |
+| 关闭、再见、你走吧   | 静音、闭嘴、我想静静        |   取消静音、你在哪呢、你可以说话了                            |
+
+
+
+### **商务联系**
+
+**QQ: 467665317**
+
+**我们提供：开发顾问、数字人模型定制及高校教学资源实施服务**
+
+http://yafrm.com/forum.php?mod=viewthread&tid=302
+
+关注公众号(fay数字人)获取最新微信技术交流群二维码（**请先star本仓库**）
+
+![](images/gzh.jpg)
