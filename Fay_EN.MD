@@ -23,66 +23,38 @@ Fay Controller Usage in Assistant Edition: Voice communication, voice and text r
 
 ## **Fay Controller Core Logic**
 
-```mermaid
-
-flowchart TB
-
-    subgraph Audio-source
-        subgraph  
-            aa("Remote Android")
-            cc("Remote PC")
-            bb("Local PC")
-        end
-    end
-
-    subgraph speech-recognition
-    	subgraph   
-            aliyun("aliyun api")
-            funasr("funasr")  
-        end
-    end
-
-    
-
-    subgraph natural-language-processing
-     subgraph interface
-     eighta("yuan1.0")
-     eightb("lingju")
-     eightc("GPT/ChatGPT")    
-     end
-    subgraph offline
-      eightd("Rasa + ChatGLM-6B")
-      eighte("VisualGLM")
-      eightf("RWKV")
-      end
-    end
-
-    subgraph speech-synthesis
-    	subgraph  
-            seven_az("azure")
-            seven_edg("Edge-TTS")
-            seven_vi("vits")
-         end
-    end
-
-    subgraph rendering
-    	subgraph  
-            sixa("Remote Android")
-            sixb("Live2d")
-            sixc("UE")
-            sixd("Xuniren")
-            sixe("Remote PC")
-         end
-    end
-
+  Remote Android　　　　　　Local PC　　　　　Remote PC
+ 
+　　　　　└─────────────┼─────────────┘
+                
+                
+　　　　　　Aliyun API ─┐　　　│
+      
+            
+　　　　　 　　　　　　├── ASR　　　
+            
+            
+ 　  　　 　　　 [FunASR](https://www.bilibili.com/video/BV1qs4y1g74e) ─┘　　　│　　 　 ┌─ Yuan 1.0
+                
+　　　　　　　　　　　　　　　│　　 　 ├─ [LingJu](https://www.bilibili.com/video/BV1NW4y1D76a/)
+                
+　　　 　　　　　　　　　　　NLP ────┼─ [GPT/ChatGPT](https://www.bilibili.com/video/BV1Dg4y1V7pn)
+                
+　　　　　　　　　　　　　　　│　　 　 ├─ [Rasa+ChatGLM-6B](https://www.bilibili.com/video/BV1D14y1f7pr)
+         
+　　　　　　　　 Azure ─┐　 　 │　　 　 ├─ [VisualGLM](https://www.bilibili.com/video/BV1mP411Q7mj)
+            
+　　　　　 　 Edge TTS ─┼──     TTS 　　 　└─ [RWKV](https://www.bilibili.com/video/BV1yu41157zB)
+       
+　 　　 　   　　[开源 TTS](https://www.bilibili.com/read/cv25192534) ─┘　 　 │　　 　 
+            
+　　　　　　　　　　　　　　　│　　 　 
+         
+　　　　　　　　　　　　　　　│　　 　 
+                
+　　　 ┌──────────┬────┼───────┬─────────┐
    
-	Audio-source --> speech-recognition
-	speech-recognition --> natural-language-processing
-	natural-language-processing --> speech-synthesis
-    	speech-synthesis --> rendering
-
-
-```
+[Remote Android](https://www.bilibili.com/video/BV1FF411X7sW/?spm_id_from=333.788&vd_source=1364af6ac23a05600acd8f8415936944)　　　[Live2D](https://www.bilibili.com/video/BV1sx4y1d775/?vd_source=564eede213b9ddfa9a10f12e5350fd64)　　 [UE](https://www.bilibili.com/read/cv25133736)　　　 [xuniren](https://www.bilibili.com/read/cv24997550)　　　[Remote PC](https://www.bilibili.com/video/BV1FF411X7sW/?spm_id_from=333.788&vd_source=1364af6ac23a05600acd8f8415936944)
 
 
 ### **Code Structure**
