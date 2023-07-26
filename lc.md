@@ -8,20 +8,20 @@
 　　　　　　Aliyun API ─┐　　　│
       
             
-　　　　　　　　　　　　├── ASR　　　
+　　　　　 　　　　　　├── ASR　　　
             
             
-　　　　　　　 [FunASR](https://www.bilibili.com/video/BV1qs4y1g74e) ─┘　　　│　　 　 ┌─ Yuan 1.0
+ 　  　　 　　　 [FunASR](https://www.bilibili.com/video/BV1qs4y1g74e) ─┘　　　│　　 　 ┌─ Yuan 1.0
                 
 　　　　　　　　　　　　　　　│　　 　 ├─ [LingJu](https://www.bilibili.com/video/BV1NW4y1D76a/)
                 
-　　　　　　　　　　　　　　NLP ────┼─ [GPT/ChatGPT](https://www.bilibili.com/video/BV1Dg4y1V7pn)
+　　　 　　　　　　　　　　　NLP ────┼─ [GPT/ChatGPT](https://www.bilibili.com/video/BV1Dg4y1V7pn)
                 
 　　　　　　　　　　　　　　　│　　 　 ├─ [Rasa+ChatGLM-6B](https://www.bilibili.com/video/BV1D14y1f7pr)
          
-　　　　　　　　 Azure ─┐　　 │　　 　 ├─ [VisualGLM](https://www.bilibili.com/video/BV1mP411Q7mj)
+　　　　　　　　 Azure ─┐　 　 │　　 　 ├─ [VisualGLM](https://www.bilibili.com/video/BV1mP411Q7mj)
             
-　　　     　　　Edge TTS ─┼── 　TTS　　　└─ [RWKV](https://www.bilibili.com/video/BV1yu41157zB)
+　　　　　 　 Edge TTS ─┼──     TTS 　　 　└─ [RWKV](https://www.bilibili.com/video/BV1yu41157zB)
        
 　　　　　　　　离线tts ─┘　　 │　　 　 
             
