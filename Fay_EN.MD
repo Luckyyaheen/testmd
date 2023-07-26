@@ -46,7 +46,7 @@ Fay Controller Usage in Assistant Edition: Voice communication, voice and text r
             
 　　　　　 　 Edge TTS ─┼──     TTS 　　 　└─ [RWKV](https://www.bilibili.com/video/BV1yu41157zB)
        
-　 　　 　   　　[Open source TTS](https://www.bilibili.com/read/cv25192534) ─┘　 　 │　　 　 
+　   　　[Open source TTS](https://www.bilibili.com/read/cv25192534) ─┘　 　 │　　 　 
             
 　　　　　　　　　　　　　　　│　　 　 
          
