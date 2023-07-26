@@ -23,7 +23,7 @@
             
 　　　　　 　 Edge TTS ─┼──     TTS 　　 　└─ [RWKV](https://www.bilibili.com/video/BV1yu41157zB)
        
-　 　　　  　　　离线tts ─┘　 　 │　　 　 
+　 　　 　   　　开源 TTS ─┘　 　 │　　 　 
             
 　　　　　　　　　　　　　　　│　　 　 
          
