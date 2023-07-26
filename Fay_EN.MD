@@ -46,7 +46,7 @@ Fay Controller Usage in Assistant Edition: Voice communication, voice and text r
             
 　　　　　 　 Edge TTS ─┼──     TTS 　　 　└─ [RWKV](https://www.bilibili.com/video/BV1yu41157zB)
        
-　 　　 　   　　[开源 TTS](https://www.bilibili.com/read/cv25192534) ─┘　 　 │　　 　 
+　 　　 　   　　[Open source TTS](https://www.bilibili.com/read/cv25192534) ─┘　 　 │　　 　 
             
 　　　　　　　　　　　　　　　│　　 　 
          
@@ -110,7 +110,6 @@ Remote Android　　　[Live2D](https://www.bilibili.com/video/BV1sx4y1d775/?vd_
 
 
 ## **Upgrade Log**
-
 
 **2023.07.21：**
 + Multiple updates for the merchandise version.
