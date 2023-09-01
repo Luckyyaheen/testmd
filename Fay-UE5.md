@@ -13,16 +13,15 @@
 
 ### **1、[如何进行抖音直播](https://www.bilibili.com/video/BV1r3411Z7St/?spm_id_from=333.999.0.0&vd_source=1364af6ac23a05600acd8f8415936944)**
 ### **2、[如何进行B站直播](https://www.bilibili.com/video/BV14h4y1N716/?spm_id_from=333.999.0.0&vd_source=1364af6ac23a05600acd8f8415936944)** 
-### **3、[如何进行数字人交互](https://blog.csdn.net/aa84758481/article/details/132204938?spm=1001.2014.3001.5502)：** 
+### **3、[如何进行数字人交互](https://blog.csdn.net/aa84758481/article/details/132204938?spm=1001.2014.3001.5502)** 
 
-![](images/lucky.png)
-
-工程下载地址链接：链接：https://pan.baidu.com/s/1P_yNzKKo-SEeUiLtvJnCBA?pwd=vp4l（exe运行包请关注公众号，发你的数字人运行视频获取）
 
 
 ## **二、UE工程组成**
-![](images/chajian.png)
+1、[UE基本操作及数字人工程模块组成](https://blog.csdn.net/aa84758481/article/details/132204938?spm=1001.2014.3001.5502)
 
+
+2、[UE数字人工程运行逻辑及程序逻辑](https://blog.csdn.net/aa84758481/article/details/132335739?spm=1001.2014.3001.5502)
 
  ## **三、历史版本**
 
