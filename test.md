@@ -1,3 +1,5 @@
+![tupian](chengs.png)
+
 <div align="center">
     <br>
     <img src="https://github.com/TheRamU/Fay/raw/main/images/icon.png" alt="Fay">
