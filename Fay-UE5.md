@@ -11,9 +11,11 @@
 
 ## **一、使用逻辑**
 
-### **1、[如何进行抖音直播](https://www.bilibili.com/video/BV1r3411Z7St/?spm_id_from=333.999.0.0&vd_source=1364af6ac23a05600acd8f8415936944)**
-### **2、[如何进行B站直播](https://www.bilibili.com/video/BV14h4y1N716/?spm_id_from=333.999.0.0&vd_source=1364af6ac23a05600acd8f8415936944)** 
-### **3、[如何进行数字人交互](https://blog.csdn.net/aa84758481/article/details/132204938?spm=1001.2014.3001.5502)** 
+1、[如何进行抖音直播](https://www.bilibili.com/video/BV1r3411Z7St/?spm_id_from=333.999.0.0&vd_source=1364af6ac23a05600acd8f8415936944)
+
+2、[如何进行B站直播](https://www.bilibili.com/video/BV14h4y1N716/?spm_id_from=333.999.0.0&vd_source=1364af6ac23a05600acd8f8415936944)
+
+3、[如何进行数字人交互](https://blog.csdn.net/aa84758481/article/details/132204938?spm=1001.2014.3001.5502)
 
 
 
